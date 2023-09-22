@@ -9,6 +9,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.container-project {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Adjust the gap as needed */
+}
+--------------------------------------------------------------
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
