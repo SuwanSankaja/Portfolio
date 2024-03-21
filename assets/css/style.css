@@ -1255,3 +1255,123 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/* Projects section mobile responsiveness */
+@media (max-width: 768px) {
+  .container-project {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .portfolio .portfolio-item,
+  .portfolio-rasa .portfolio-rasa-item {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Adjust space between items */
+  }
+
+  .portfolio .portfolio-wrap img,
+  .portfolio-rasa .portfolio-wrap img {
+    max-width: 100%; /* Ensures image is not wider than its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .portfolio .portfolio-wrap,
+  .portfolio-rasa .portfolio-wrap {
+    padding: 0; /* Adjust padding if needed */
+  }
+
+  .portfolio .portfolio-wrap .portfolio-links,
+  .portfolio-rasa .portfolio-wrap .portfolio-links {
+    display: flex;
+    justify-content: center; /* Center links under the image */
+  }
+  
+  /* If you are using videos or other media, ensure they are responsive too */
+  .portfolio video,
+  .portfolio-rasa video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Adjust project titles for small screens */
+  .portfolio .portfolio-wrap h2,
+  .portfolio-rasa .portfolio-wrap h2 {
+    font-size: 18px; /* Smaller font size for titles on mobile */
+  }
+  
+  /* Responsive text size and padding for project descriptions if necessary */
+  .portfolio .portfolio-wrap p,
+  .portfolio-rasa .portfolio-wrap p {
+    font-size: 14px; /* Smaller font size for text on mobile */
+    padding: 0 10px; /* Add padding to prevent text from touching the edges */
+  }
+  
+  /* Ensure buttons and links within projects are touch-friendly */
+  .portfolio .portfolio-wrap a,
+  .portfolio-rasa .portfolio-wrap a {
+    padding: 10px; /* Larger padding for clickable elements */
+    font-size: 16px; /* Larger font size for links */
+  }
+}
+
+/* You can also add styles for very small screens if necessary */
+@media (max-width: 480px) {
+  /* Similar adjustments as above but for even smaller screens */
+}
+
+@media (max-width: 768px) {
+  .container-project .image-with-heading {
+    width: 100%; /* Adjust the width to 100% for small screens */
+    text-align: center; /* Center the content */
+    padding: 0 15px; /* Add padding to ensure content doesn't touch the edges */
+  }
+
+  .container-project .image-with-heading img,
+  .container-project .image-with-heading video {
+    max-width: 100%; /* Ensure media does not overflow */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .container-project .image-with-heading h2,
+  .container-project .image-with-heading a {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+    margin: 10px 0; /* Add margin for spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact .info, .contact .php-email-form {
+    width: 100%; /* Full width for small screens */
+    margin-bottom: 20px; /* Add some space between the map and contact form */
+  }
+
+  .contact iframe {
+    max-width: 100%; /* Ensures the map is not wider than its container */
+    height: auto; /* Adjust height accordingly */
+  }
+  
+  .contact .social-links a {
+    margin: 0 5px; /* Reduce the margin between social icons */
+    width: 35px; /* Adjust the size if necessary */
+    height: 35px; /* Adjust the size if necessary */
+  }
+
+  /* If the contact form has a fixed width, make it 100% */
+  .contact form {
+    width: 100%;
+  }
+
+  /* Adjust padding and layout for the form input fields and buttons */
+  .contact form .form-group {
+    padding: 0; /* Adjust padding if necessary */
+  }
+
+  .contact form input, 
+  .contact form textarea {
+    width: 100%; /* Full width for input fields */
+  }
+
+  .contact form button[type="submit"] {
+    width: 100%; /* Full width for submit button */
+    margin-top: 15px; /* Add some margin at the top */
+  }
+}
