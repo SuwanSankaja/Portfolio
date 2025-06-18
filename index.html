@@ -19,458 +19,539 @@
   <link href="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/website_logo_cropped.png" rel="icon">
   <link href="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/website_logo_cropped.png" rel="apple-touch-icon">
 
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner"></div>
+  </div>
+
+  <!-- Mobile nav toggle button -->
   <i class="bi bi-list mobile-nav-toggle"></i>
 
-  <header id="header" class="d-flex flex-column justify-content-center">
-
+  <!-- Header -->
+  <header id="header">
     <div class="profile">
-        <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/new_pro_pic_suited.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Suwan Sankaja</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/SuwanSankaja" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/SuwanSankaja1999/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/suwansankaja/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/suwansankaja/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/SuwanSankaja" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-        </div>
+      <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/new_pro_pic_suited.jpg" alt="Suwan Sankaja">
+      <h1><a href="index.html">Suwan Sankaja</a></h1>
+      <p class="tagline">Software Engineer & Data Scientist</p>
+      <div class="social-links">
+        <a href="https://twitter.com/SuwanSankaja" target="_blank"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/suwansankaja/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/SuwanSankaja" target="_blank"><i class="bx bxl-github"></i></a>
+        <a href="https://www.instagram.com/suwansankaja/" target="_blank"><i class="bx bxl-instagram"></i></a>
       </div>
+    </div>
 
-    <nav id="navbar" class="navbar nav-menu">
+    <nav class="nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-star"></i> <span>Skills</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Projects</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Certifications</span></a></li>
+        <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-code-block"></i> <span>Projects</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Certifications</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
-    </nav></header><main id="main">
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center hero-background">
-      <div class="hero-container" data-aos="fade-in">
-        <h1>Suwan Sankaja</h1>
-        <p>I build intelligent applications with a focus on <span class="typed" data-typed-items="Data Science, Machine Learning, Full-Stack Development"></span></p>
-      </div>
-    </section><section id="about" class="about">
-      <div class="container">
+    </nav>
+  </header>
 
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="code-background">
+        <div class="code-line" style="top: 10%; left: 0; animation-delay: 0s;">const analyze = (data) => data.map(transform);</div>
+        <div class="code-line" style="top: 15%; left: 0; animation-delay: 2s;">import { MachineLearning } from 'tensorflow';</div>
+        <div class="code-line" style="top: 20%; left: 0; animation-delay: 4s;">function processDataset(input) { return neural.predict(input); }</div>
+        <div class="code-line" style="top: 25%; left: 0; animation-delay: 6s;">if (model.accuracy > threshold) { deploy(); }</div>
+        <div class="code-line" style="top: 30%; left: 0; animation-delay: 8s;">const results = await model.train(dataset);</div>
+        <div class="code-line" style="top: 35%; left: 0; animation-delay: 10s;">class DataScience { constructor() { this.init(); } }</div>
+        <div class="code-line" style="top: 40%; left: 0; animation-delay: 12s;">pipeline.add(preprocessing).add(training).execute();</div>
+        <div class="code-line" style="top: 45%; left: 0; animation-delay: 14s;">export default { predict, analyze, visualize };</div>
+        <div class="code-line" style="top: 50%; left: 0; animation-delay: 16s;">const insights = data.reduce((acc, val) => acc + val, 0);</div>
+        <div class="code-line" style="top: 55%; left: 0; animation-delay: 18s;">async function fetchAPI() { return await response.json(); }</div>
+        <div class="code-line" style="top: 60%; left: 0; animation-delay: 1s;">matrix.multiply(weights).add(bias).activate();</div>
+        <div class="code-line" style="top: 65%; left: 0; animation-delay: 3s;">for (let epoch = 0; epoch < iterations; epoch++) { optimize(); }</div>
+        <div class="code-line" style="top: 70%; left: 0; animation-delay: 5s;">const features = extractFeatures(rawData);</div>
+        <div class="code-line" style="top: 75%; left: 0; animation-delay: 7s;">model.compile({ optimizer: 'adam', loss: 'mse' });</div>
+        <div class="code-line" style="top: 80%; left: 0; animation-delay: 9s;">return predictions.filter(p => p.confidence > 0.95);</div>
+        <div class="code-line" style="top: 85%; left: 0; animation-delay: 11s;">dataset.split(0.8).train().validate().test();</div>
+        <div class="code-line" style="top: 90%; left: 0; animation-delay: 13s;">console.log(`Accuracy: ${(score * 100).toFixed(2)}%`);</div>
+      </div>
+      <div class="matrix-overlay"></div>
+      <div class="hero-container">
+        <h1>Suwan Sankaja</h1>
+        <p class="subtitle">Building intelligent solutions at the intersection of code and data</p>
+        <div class="typed-wrapper">
+          <span>I specialize in </span>
+          <span class="typed" data-typed-items="Data Science, Machine Learning, Full-Stack Development, AI Applications"></span>
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary scrollto">
+            <i class="bx bx-rocket"></i> View My Work
+          </a>
+          <a href="#contact" class="btn-outline scrollto">
+            <i class="bx bx-message-dots"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
         <div class="section-title">
           <h2>About Me</h2>
-          <p>I am a final-year Computer Science & Engineering Undergraduate at the University of Moratuwa with a passion for solving complex challenges. I specialize in AI and machine learning applications, and I actively participate in hackathons to continuously refine my skills and collaborate on innovative solutions.</p>
+          <p>Passionate about solving complex challenges through innovative technology</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/new_pro_pic_suited.jpg" class="img-fluid" alt="">
+        <div class="about-content" data-aos="fade-up">
+          <div class="about-image">
+            <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/profile_images/new_pro_pic_suited.jpg" alt="Suwan Sankaja">
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Computer Science &amp; Engineering Undergraduate</h3>
-            <p class="fst-italic">
-              Specializing in Data Science & Engineering.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <a href="https://www.suwansankaja.com" target="_blank">suwansankaja.com</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+94 71 940 6335</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Colombo, Sri Lanka</span></li>
-                </ul>
+          <div class="about-text">
+            <h3>Computer Science & Engineering Undergraduate</h3>
+            <p class="lead">Specializing in Data Science & Engineering at University of Moratuwa</p>
+            <p>I am a final-year undergraduate with a passion for building intelligent applications that make a difference. My journey in tech has been driven by curiosity and a desire to solve real-world problems through code.</p>
+            <div class="about-info">
+              <div class="info-item">
+                <i class="bi bi-geo-alt"></i>
+                <span><strong>Location:</strong> Colombo, Sri Lanka</span>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSc Engineering (Hons)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>suwan.sankaja@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
+              <div class="info-item">
+                <i class="bi bi-envelope"></i>
+                <span><strong>Email:</strong> suwan.sankaja@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-phone"></i>
+                <span><strong>Phone:</strong> +94 71 940 6335</span>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-laptop"></i>
+                <span><strong>Freelance:</strong> Available</span>
               </div>
             </div>
-            <p>
-              Driven by a passion for AI, I actively seek challenging problems to solve. I enjoy participating in hackathons, constantly enhancing my practical skills and collaborating with others to build innovative solutions.
-            </p>
+            <p>I actively participate in hackathons and coding competitions, constantly pushing my boundaries and collaborating with talented individuals to create innovative solutions.</p>
           </div>
         </div>
-
       </div>
-    </section><section id="skills" class="skills section-bg">
-        <div class="container">
-  
-          <div class="section-title">
-            <h2>My Technical Skills</h2>
-            <p>I have experience with a diverse range of technologies that I've applied in various projects. Here are some of my key competencies.</p>
-          </div>
-  
-          <div class="row skills-content">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up">
-              <h4>Programming Languages</h4>
-              <ul class="skills-list">
-                <li><i class="bi bi-check-circle"></i> Python</li>
-                <li><i class="bi bi-check-circle"></i> JavaScript (ES6+)</li>
-                <li><i class="bi bi-check-circle"></i> Java</li>
-                <li><i class="bi bi-check-circle"></i> SQL</li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <h4>Backend & Databases</h4>
-              <ul class="skills-list">
-                <li><i class="bi bi-check-circle"></i> Node.js & Express</li>
-                <li><i class="bi bi-check-circle"></i> Spring Boot</li>
-                <li><i class="bi bi-check-circle"></i> Django</li>
-                <li><i class="bi bi-check-circle"></i> MySQL & PostgreSQL</li>
-                <li><i class="bi bi-check-circle"></i> MongoDB</li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <h4>Frontend</h4>
-              <ul class="skills-list">
-                <li><i class="bi bi-check-circle"></i> React & React Native</li>
-                <li><i class="bi bi-check-circle"></i> HTML5 & CSS3</li>
-                <li><i class="bi bi-check-circle"></i> Bootstrap</li>
-                <li><i class="bi bi-check-circle"></i> Tailwind CSS</li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <h4>Data Science & ML</h4>
-              <ul class="skills-list">
-                <li><i class="bi bi-check-circle"></i> RASA NLU</li>
-                <li><i class="bi bi-check-circle"></i> Scikit-learn</li>
-                <li><i class="bi bi-check-circle"></i> TensorFlow</li>
-                <li><i class="bi bi-check-circle"></i> Pandas & NumPy</li>
-              </ul>
-            </div>
-          </div>
-  
-        </div>
-      </section><section id="resume" class="resume">
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-bg">
       <div class="container">
-
         <div class="section-title">
-          <h2>Resume</h2>
-          <p>
-            <a href="#" class="btn-download-resume">Download Full Resume <i class="bi bi-download"></i></a>
-          </p>
+          <h2>Technical Skills</h2>
+          <p>A comprehensive toolkit for building modern applications</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Suwan Sankaja</h4>
-              <p><em>Innovative and deadline-driven developer with a strong foundation in computer science and a specialization in data science. Passionate about creating intelligent, scalable applications from concept to production.</em></p>
-              <ul>
-                <li>Colombo, Sri Lanka</li>
-                <li>(+94) 71 940 6335</li>
-                <li>suwan.sankaja@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Computer Science &amp; Engineering</h4>
-              <h5>2021 - Present</h5>
-              <p><em>University of Moratuwa, Sri Lanka</em></p>
-              <p>Focusing on foundational computer science, hardware systems, artificial intelligence, and software development lifecycles.</p>
-            </div>
-            <div class="resume-item">
-              <h4>GCE Advance Level Exam (A/L)</h4>
-              <h5>2019</h5>
-              <p><em>Royal College, Colombo</em></p>
-              <p>Z-score: 2.006. Results: Combined Maths - A, Chemistry - A, Physics - B.</p>
-            </div>
+        <div class="skills-grid" data-aos="fade-up">
+          <div class="skill-card">
+            <h4><i class="bx bx-code-alt"></i> Languages</h4>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Java</li>
+              <li>SQL</li>
+            </ul>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Project Experience</h3>
-            <div class="resume-item">
-              <h4>RASA Medical Chatbot (NLP Project)</h4>
-              <h5>2023 - Present</h5>
-              <p><em>Technologies: RASA NLU, React JS, MySQL, Django</em></p>
-              <ul>
-                <li>Developed a chatbot to understand and respond in Sinhala for appointment booking and information retrieval.</li>
-                <li>Engineered the NLU pipeline for intent recognition and entity extraction in a low-resource language.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>StarFly Interstellar Travel Assistant</h4>
-              <h5>2023</h5>
-              <p><em>Technologies: React Native, JavaScript, Django</em></p>
-              <ul>
-                <li>Built a futuristic mobile booking application for interstellar travel, featuring biometric authentication and an integrated chatbot for user assistance.</li>
-                <li>Designed and implemented the backend logic for managing bookings, user data, and payments.</li>
-              </ul>
-            </div>
-             <div class="resume-item">
-              <h4>Single Vendor E-Commerce Platform</h4>
-              <h5>2022 - 2023</h5>
-              <p><em>Technologies: PHP, JavaScript, MySQL, Bootstrap</em></p>
-              <ul>
-                <li>Created a full-featured web-based e-commerce platform for a single vendor to manage and sell products online.</li>
-                <li>Developed functionalities for product uploads, pricing, order management, and customer interactions.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </section><section id="projects" class="projects section-bg">
-        <div class="container">
-  
-          <div class="section-title">
-            <h2>Projects</h2>
-            <p>Here are a few projects I've worked on recently. Want to see more? <a href="mailto:suwan.sankaja@gmail.com">Email me</a>.</p>
+          <div class="skill-card">
+            <h4><i class="bx bx-server"></i> Backend</h4>
+            <ul class="skill-list">
+              <li>Node.js & Express</li>
+              <li>Django & Django REST</li>
+              <li>Spring Boot</li>
+              <li>RESTful APIs</li>
+            </ul>
           </div>
-  
-          <div class="row">
-            <div class="col-lg-6 d-flex align-items-stretch mb-4" data-aos="fade-up">
-              <div class="project-card">
-                <div class="project-image">
-                    <video controls muted loop class="img-fluid">
-                        <source src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/projects/rasa_2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="project-content">
-                  <h4><a href="https://github.com/SuwanSankaja/Medical_Chatbot" target="_blank">Medical Chatbot with RASA</a></h4>
-                  <p class="project-description">An NLP-powered chatbot for the medical domain that understands Sinhala, allowing users to book appointments and query information conversationally.</p>
-                  <div class="project-tags">
-                    <span>RASA</span>
-                    <span>Python</span>
-                    <span>React</span>
-                    <span>MySQL</span>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://github.com/SuwanSankaja/Medical_Chatbot" target="_blank" class="btn-view-code"><i class="bx bxl-github"></i> View Code</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="project-card">
-                <div class="project-image">
-                  <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/projects/starfly.gif" class="img-fluid" alt="StarFly Project GIF">
-                </div>
-                <div class="project-content">
-                  <h4><a href="https://github.com/SuwanSankaja/StarFly_Interstellar_Traveling" target="_blank">StarFly Interstellar Traveling</a></h4>
-                  <p class="project-description">A conceptual mobile app for a future where interstellar travel is common. Features booking, biometric authentication, and a helpful chatbot assistant.</p>
-                  <div class="project-tags">
-                    <span>React Native</span>
-                    <span>Django</span>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://github.com/SuwanSankaja/StarFly_Interstellar_Traveling" target="_blank" class="btn-view-code"><i class="bx bxl-github"></i> View Code</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
+
+          <div class="skill-card">
+            <h4><i class="bx bx-palette"></i> Frontend</h4>
+            <ul class="skill-list">
+              <li>React & React Native</li>
+              <li>HTML5 & CSS3</li>
+              <li>Bootstrap & Tailwind</li>
+              <li>Responsive Design</li>
+            </ul>
           </div>
-  
-        </div>
-      </section><section id="portfolio" class="portfolio">
-      <div class="container">
 
-        <div class="section-title">
-          <h2>Badges & Certifications</h2>
-          <p>I believe in continuous learning. Here are some of the certifications and badges I've earned.</p>
-        </div>
+          <div class="skill-card">
+            <h4><i class="bx bx-data"></i> Databases</h4>
+            <ul class="skill-list">
+              <li>MySQL & PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>Redis</li>
+              <li>Database Design</li>
+            </ul>
+          </div>
 
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-coursera">Coursera</li>
-              <li data-filter=".filter-cisco">Cisco</li>
-              <li data-filter=".filter-aws">AWS</li>
-              <li data-filter=".filter-other">Other</li>
+          <div class="skill-card">
+            <h4><i class="bx bx-brain"></i> AI/ML</h4>
+            <ul class="skill-list">
+              <li>RASA NLU</li>
+              <li>TensorFlow & Keras</li>
+              <li>Scikit-learn</li>
+              <li>Pandas & NumPy</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h4><i class="bx bx-wrench"></i> Tools</h4>
+            <ul class="skill-list">
+              <li>Git & GitHub</li>
+              <li>Docker</li>
+              <li>VS Code</li>
+              <li>Postman</li>
             </ul>
           </div>
         </div>
-
-        <div class="row portfolio-container justify-content-center" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-coursera">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/coursera/ML_Specialization.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                  <h4>Machine Learning Specialization</h4>
-                  <p>Coursera</p>
-                  <div class="portfolio-links">
-                    <a href="https://coursera.org/share/d294f68c8166c56abe44840907a9b9c5" title="View Certificate" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cisco">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/cisco/network_essentials.png" class="img-fluid" alt="">
-               <div class="portfolio-info">
-                  <h4>Networking Essentials</h4>
-                  <p>Cisco</p>
-                  <div class="portfolio-links">
-                    <a href="https://www.credly.com/badges/e702cce4-40df-472c-9f9c-05046f05d3ca/public_url" title="View Badge" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-aws">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/aws/Machine_Learning_Foundations.png" class="img-fluid" alt="">
-               <div class="portfolio-info">
-                  <h4>Machine Learning Foundations</h4>
-                  <p>AWS</p>
-                  <div class="portfolio-links">
-                    <a href="https://www.credly.com/badges/2db54c97-239b-4599-b337-d2cbfb2d2dfb/public_url" title="View Badge" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-other">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/Artificial_Intelligence_Introduction.png" class="img-fluid" alt="">
-               <div class="portfolio-info">
-                  <h4>Intro to Artificial Intelligence</h4>
-                  <p>Accenture</p>
-                  <div class="portfolio-links">
-                    <a href="https://www.futurelearn.com/certificates/7ujlse1" title="View Certificate" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-coursera">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/coursera/Intro_Cloud_Computing.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                  <h4>Intro to Cloud Computing</h4>
-                  <p>Coursera</p>
-                  <div class="portfolio-links">
-                    <a href="https://coursera.org/share/2860540723088a5ff23d200be967e433" title="View Certificate" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-          
-           <div class="col-lg-4 col-md-6 portfolio-item filter-cisco">
-            <div class="portfolio-wrap">
-              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/cisco/Introduction_to_Cybersecurity.png" class="img-fluid" alt="">
-               <div class="portfolio-info">
-                  <h4>Intro to Cybersecurity</h4>
-                  <p>Cisco</p>
-                  <div class="portfolio-links">
-                    <a href="https://www.credly.com/badges/9fc41e2e-401c-425d-b4e8-c948e659755e/public_url" title="View Badge" target="_blank"><i class="bx bx-link"></i></a>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
       </div>
-    </section><section id="contact" class="contact section-bg">
-      <div class="container">
+    </section>
 
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+      <div class="container">
         <div class="section-title">
-          <h2>Contact</h2>
-          <p>Have a question or want to work together? Feel free to reach out!</p>
+          <h2>Resume</h2>
+          <p>My educational background and project experience</p>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div class="text-center" data-aos="fade-up">
+          <a href="#" class="btn-download">
+            <i class="bx bx-download"></i> Download Full Resume
+          </a>
+        </div>
 
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
+        <div class="resume-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="resume-section">
+            <h3 class="resume-title"><i class="bx bx-graduation"></i> Education</h3>
+            
+            <div class="resume-item">
+              <h4>BSc in Computer Science & Engineering</h4>
+              <h5>2021 - Present</h5>
+              <p><em>University of Moratuwa, Sri Lanka</em></p>
+              <p>Specializing in Data Science & Engineering. Focusing on AI, machine learning, and software development.</p>
+            </div>
+
+            <div class="resume-item">
+              <h4>GCE Advanced Level</h4>
+              <h5>2019</h5>
+              <p><em>Royal College, Colombo</em></p>
+              <p>Physical Sciences Stream | Z-Score: 2.006</p>
+              <ul>
+                <li>Combined Mathematics - A</li>
+                <li>Chemistry - A</li>
+                <li>Physics - B</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>GCE Ordinary Level</h4>
+              <h5>2015</h5>
+              <p><em>Presidents Collge, Colombo</em></p>
+              <p>English Medium | Results: 9As</p>
+              
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h3 class="resume-title"><i class="bx bx-briefcase"></i> Experience</h3>
+            
+            <div class="resume-item">
+              <h4>RASA Medical Chatbot</h4>
+              <h5>2023 - Present</h5>
+              <p><em>NLP & AI Project</em></p>
+              <ul>
+                <li>Developed Sinhala language understanding for medical domain</li>
+                <li>Implemented appointment booking and information retrieval</li>
+                <li>Built with RASA NLU, React, Django, and MySQL</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>StarFly Interstellar Travel</h4>
+              <h5>2023</h5>
+              <p><em>Mobile Application Development</em></p>
+              <ul>
+                <li>Created futuristic booking app with biometric authentication</li>
+                <li>Integrated AI chatbot for user assistance</li>
+                <li>Used React Native, Django, and modern UI/UX principles</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>E-Commerce Platform</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>Full-Stack Web Development</em></p>
+              <ul>
+                <li>Built complete single-vendor e-commerce solution</li>
+                <li>Implemented product management and payment processing</li>
+                <li>Technologies: PHP, JavaScript, MySQL, Bootstrap</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Projects</h2>
+          <p>Some of my recent work that showcases my skills and passion</p>
+        </div>
+
+        <div class="projects-grid" data-aos="fade-up">
+          <div class="project-card">
+            <div class="project-media">
+              <video controls muted loop>
+                <source src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/projects/rasa_2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="project-content">
+              <h4><a href="https://github.com/SuwanSankaja/Medical_Chatbot" target="_blank">Medical Chatbot with RASA</a></h4>
+              <p class="project-description">
+                An intelligent NLP-powered chatbot for the medical domain that understands and responds in Sinhala, enabling users to book appointments and query medical information conversationally.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">RASA NLU</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Django</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/SuwanSankaja/Medical_Chatbot" target="_blank" class="project-link">
+                  <i class="bx bxl-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-media">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/projects/starfly.gif" alt="StarFly Project">
+            </div>
+            <div class="project-content">
+              <h4><a href="https://github.com/SuwanSankaja/StarFly_Interstellar_Traveling" target="_blank">StarFly Interstellar Travel</a></h4>
+              <p class="project-description">
+                A futuristic mobile application concept for interstellar travel booking, featuring biometric authentication, AI-powered assistance, and an immersive user experience.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/SuwanSankaja/StarFly_Interstellar_Traveling" target="_blank" class="project-link">
+                  <i class="bx bxl-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Certifications & Badges</h2>
+          <p>Continuous learning is key to staying ahead in technology</p>
+        </div>
+
+        <div class="cert-filters" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="*">All</button>
+          <button class="filter-btn" data-filter=".coursera">Coursera</button>
+          <button class="filter-btn" data-filter=".cisco">Cisco</button>
+          <button class="filter-btn" data-filter=".aws">AWS</button>
+          <button class="filter-btn" data-filter=".other">Other</button>
+        </div>
+
+        <div class="certifications-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-card coursera">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/coursera/ML_Specialization.png" alt="Machine Learning Specialization">
+              <div class="cert-overlay">
+                <h4>Machine Learning Specialization</h4>
+                <p>Coursera</p>
+                <a href="https://coursera.org/share/d294f68c8166c56abe44840907a9b9c5" target="_blank">View Certificate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card cisco">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/cisco/network_essentials.png" alt="Networking Essentials">
+              <div class="cert-overlay">
+                <h4>Networking Essentials</h4>
+                <p>Cisco</p>
+                <a href="https://www.credly.com/badges/e702cce4-40df-472c-9f9c-05046f05d3ca/public_url" target="_blank">View Badge</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card aws">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/aws/Machine_Learning_Foundations.png" alt="Machine Learning Foundations">
+              <div class="cert-overlay">
+                <h4>Machine Learning Foundations</h4>
+                <p>AWS</p>
+                <a href="https://www.credly.com/badges/2db54c97-239b-4599-b337-d2cbfb2d2dfb/public_url" target="_blank">View Badge</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card other">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/Artificial_Intelligence_Introduction.png" alt="Intro to AI">
+              <div class="cert-overlay">
+                <h4>Intro to Artificial Intelligence</h4>
+                <p>Accenture</p>
+                <a href="https://www.futurelearn.com/certificates/7ujlse1" target="_blank">View Certificate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card coursera">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/coursera/Intro_Cloud_Computing.png" alt="Cloud Computing">
+              <div class="cert-overlay">
+                <h4>Intro to Cloud Computing</h4>
+                <p>Coursera</p>
+                <a href="https://coursera.org/share/2860540723088a5ff23d200be967e433" target="_blank">View Certificate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card cisco">
+            <div class="cert-image">
+              <img src="https://filedn.eu/lVNP1DcGQUE5OPMMHbPaQeb/Portfolio%20Website/badges%20and%20certifications/cisco/Introduction_to_Cybersecurity.png" alt="Cybersecurity">
+              <div class="cert-overlay">
+                <h4>Intro to Cybersecurity</h4>
+                <p>Cisco</p>
+                <a href="https://www.credly.com/badges/9fc41e2e-401c-425d-b4e8-c948e659755e/public_url" target="_blank">View Badge</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get In Touch</h2>
+          <p>Let's discuss your next project or collaboration opportunity</p>
+        </div>
+
+        <div class="contact-container" data-aos="fade-up">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
                 <p>Colombo, Sri Lanka</p>
               </div>
+            </div>
 
-              <div class="email">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:suwan.sankaja@gmail.com">suwan.sankaja@gmail.com</a></p>
               </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:suwan.sankaja@gmail.com">suwan.sankaja@gmail.com</a>
+              </div>
+            </div>
 
-              <div class="phone">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p><a href="tel:+94719406335">+94 71 940 6335</a></p>
-             </div>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <a href="tel:+94719406335">+94 71 940 6335</a>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="contact-form">
+            <form action="forms/contact.php" method="post" role="form">
               <div class="row">
-                <div class="form-group col-md-6">
+                <div class="col-md-6 form-group">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                <div class="col-md-6 form-group">
+                  <label for="email">Your Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <label for="subject">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <button type="submit" class="btn-submit">Send Message</button>
             </form>
           </div>
-
         </div>
-
       </div>
-    </section></main><footer id="footer">
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Suwan Sankaja</span></strong>. All Rights Reserved
+        &copy; 2025 <strong>Suwan Sankaja</strong>. All Rights Reserved.
+      </div>
+      <div class="credits">
+        Designed with <i class="bi bi-heart-fill" style="color: var(--accent-color);"></i> by Suwan Sankaja
       </div>
     </div>
-  </footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </footer>
 
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/purecounter/1.5.0/purecounter_vanilla.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope-layout/3.0.6/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
 
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
