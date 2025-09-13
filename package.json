@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuwanSankaja/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuwanSankaja/Portfolio/issues"
+  },
+  "homepage": "https://github.com/SuwanSankaja/Portfolio#readme",
+  "dependencies": {
+    "nodemailer": "^7.0.6"
+  }
+}
