@@ -188,54 +188,88 @@
     });
   });
 
-  // New Contact Form Submission Logic
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+  // Updated Contact Form Submission Logic
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    const formData = new FormData(this);
-    const formObject = {};
-    formData.forEach((value, key) => {
-      formObject[key] = value;
+      // Get form data
+      const formData = new FormData(this);
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      // Get submit button
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      
+      // Update button state
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
+
+      // Send the form data
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject),
+      })
+      .then(response => {
+        console.log('Response status:', response.status);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success response:', data);
+        
+        if (data.message === 'Email sent successfully') {
+          // Show success message
+          alert('✅ Message sent successfully! I\'ll get back to you soon.');
+          
+          // Reset the form
+          contactForm.reset();
+        } else {
+          throw new Error(data.message || 'Unknown error occurred');
+        }
+      })
+      .catch(error => {
+        console.error('Contact form error:', error);
+        
+        // Show user-friendly error message with fallback options
+        const errorMessage = `❌ Unable to send message through the contact form.\n\n` +
+                            `Please try one of these alternatives:\n` +
+                            `📧 Email: suwan.sankaja@gmail.com\n` +
+                            `📱 Phone: +94 71 940 6335\n` +
+                            `💼 LinkedIn: linkedin.com/in/suwansankaja\n\n` +
+                            `Would you like me to open your email client?`;
+        
+        const useMailto = confirm(errorMessage);
+        
+        if (useMailto) {
+          // Create mailto link with form data
+          const { name, email, subject, message } = formObject;
+          const emailBody = `Hi Suwan,\n\n` +
+                           `Name: ${name}\n` +
+                           `Email: ${email}\n\n` +
+                           `Message:\n${message}\n\n` +
+                           `Best regards,\n${name}`;
+          
+          const mailtoLink = `mailto:suwan.sankaja@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+          window.location.href = mailtoLink;
+        }
+      })
+      .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
     });
-
-    const submitButton = this.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-
-    // Updated fetch URL - use absolute path
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formObject),
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.message === 'Email sent successfully') {
-        alert('Message sent successfully!');
-        this.reset();
-      } else {
-        alert('Error: ' + data.message);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again or contact me directly at suwan.sankaja@gmail.com');
-    })
-    .finally(() => {
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-    });
-  });
-}
+  }
 
 })();
