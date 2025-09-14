@@ -205,8 +205,8 @@ if (contactForm) {
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
 
-    // Updated fetch URL - use relative path
-    fetch('./api/contact', {
+    // Updated fetch URL - use absolute path
+    fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -237,3 +237,5 @@ if (contactForm) {
     });
   });
 }
+
+})();
