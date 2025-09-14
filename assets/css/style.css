@@ -887,6 +887,19 @@
       transition: var(--transition-slow);
     }
 
+    /* Special styling for mobile app projects */
+    .project-card.mobile-app .project-media {
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-card.mobile-app .project-media img,
+    .project-card.mobile-app .project-media video {
+      object-fit: contain;
+    }
+
     .project-card:hover .project-media img,
     .project-card:hover .project-media video {
       transform: scale(1.1);
@@ -1359,6 +1372,14 @@
         grid-template-columns: 1fr;
       }
 
+      .project-media {
+        height: 220px;
+      }
+
+      .project-card.mobile-app .project-media {
+        height: 250px;
+      }
+
       .resume-container {
         grid-template-columns: 1fr;
       }
@@ -1394,6 +1415,14 @@
 
       .section-title h2 {
         font-size: 32px;
+      }
+
+      .project-media {
+        height: 200px;
+      }
+
+      .project-card.mobile-app .project-media {
+        height: 220px;
       }
 
       .project-card,
