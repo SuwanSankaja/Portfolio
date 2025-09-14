@@ -1,6 +1,9 @@
+// Replace your api/contact.js with this debug version
 const nodemailer = require('nodemailer');
 
 module.exports = async function handler(req, res) {
+  console.log('Contact API called - Method:', req.method);
+  
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
@@ -8,6 +11,7 @@ module.exports = async function handler(req, res) {
 
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
+    console.log('OPTIONS request handled');
     return res.status(200).end();
   }
 
@@ -18,7 +22,8 @@ module.exports = async function handler(req, res) {
       timestamp: new Date().toISOString(),
       environmentCheck: {
         hasGmailUser: !!process.env.GMAIL_USER,
-        hasGmailPassword: !!process.env.GMAIL_PASSWORD
+        hasGmailPassword: !!process.env.GMAIL_PASSWORD,
+        gmailUser: process.env.GMAIL_USER ? process.env.GMAIL_USER.substring(0, 3) + '***' : 'not set'
       }
     });
   }
@@ -26,37 +31,62 @@ module.exports = async function handler(req, res) {
   // Handle POST requests
   if (req.method === 'POST') {
     try {
+      console.log('POST request received');
+      console.log('Request body:', JSON.stringify(req.body, null, 2));
+      
       const { name, email, subject, message } = req.body;
 
       // Validate required fields
       if (!name || !email || !subject || !message) {
+        console.log('Validation failed - missing fields');
         return res.status(400).json({ message: 'All fields are required' });
       }
 
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
+        console.log('Email validation failed:', email);
         return res.status(400).json({ message: 'Invalid email format' });
       }
 
       // Check for environment variables
       if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD) {
-        console.error('Missing environment variables: GMAIL_USER or GMAIL_PASSWORD');
+        console.error('Missing environment variables');
+        console.error('GMAIL_USER exists:', !!process.env.GMAIL_USER);
+        console.error('GMAIL_PASSWORD exists:', !!process.env.GMAIL_PASSWORD);
         return res.status(500).json({ message: 'Server configuration error - missing email credentials' });
       }
 
-      // Create a transporter object using the default SMTP transport
+      console.log('Creating nodemailer transporter...');
+      
+      // Create a transporter object with more detailed configuration
       const transporter = nodemailer.createTransporter({
         service: 'gmail',
         auth: {
           user: process.env.GMAIL_USER,
           pass: process.env.GMAIL_PASSWORD,
         },
+        debug: true, // Enable debug mode
+        logger: true // Enable logging
       });
 
+      console.log('Verifying transporter...');
+      
+      // Verify the transporter configuration
+      try {
+        await transporter.verify();
+        console.log('Transporter verified successfully');
+      } catch (verifyError) {
+        console.error('Transporter verification failed:', verifyError);
+        return res.status(500).json({ 
+          message: 'Email configuration verification failed',
+          error: verifyError.message
+        });
+      }
+
       const mailOptions = {
-        from: process.env.GMAIL_USER, // Use your Gmail as sender
-        replyTo: email, // Set reply-to as the form submitter's email
+        from: process.env.GMAIL_USER,
+        replyTo: email,
         to: process.env.GMAIL_USER,
         subject: `New Contact Form Submission: ${subject}`,
         html: `
@@ -74,28 +104,54 @@ module.exports = async function handler(req, res) {
         `,
       };
 
+      console.log('Sending email...');
+      console.log('Mail options:', {
+        from: mailOptions.from,
+        to: mailOptions.to,
+        subject: mailOptions.subject
+      });
+
       // Send email
-      await transporter.sendMail(mailOptions);
+      const info = await transporter.sendMail(mailOptions);
       
-      console.log('Email sent successfully from:', email, 'to:', process.env.GMAIL_USER);
+      console.log('Email sent successfully');
+      console.log('Message info:', info.messageId);
       
       return res.status(200).json({ 
         message: 'Email sent successfully',
+        messageId: info.messageId,
         timestamp: new Date().toISOString()
       });
 
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Detailed error information:');
+      console.error('Error name:', error.name);
+      console.error('Error message:', error.message);
+      console.error('Error code:', error.code);
+      console.error('Error stack:', error.stack);
       
-      // More detailed error logging
+      // Handle specific Gmail errors
       if (error.code === 'EAUTH') {
         console.error('Gmail authentication failed - check credentials');
-        return res.status(500).json({ message: 'Email authentication failed' });
+        return res.status(500).json({ 
+          message: 'Gmail authentication failed - please check email credentials',
+          errorCode: 'EAUTH'
+        });
+      }
+      
+      if (error.code === 'ENOTFOUND') {
+        console.error('Network error - cannot reach Gmail servers');
+        return res.status(500).json({ 
+          message: 'Network error - cannot reach email server',
+          errorCode: 'ENOTFOUND'
+        });
       }
       
       return res.status(500).json({ 
         message: 'Failed to send email',
-        error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+        errorCode: error.code,
+        errorMessage: error.message,
+        timestamp: new Date().toISOString()
       });
     }
   }
