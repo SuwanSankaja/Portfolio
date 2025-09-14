@@ -189,46 +189,51 @@
   });
 
   // New Contact Form Submission Logic
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      const formData = new FormData(this);
-      const formObject = {};
-      formData.forEach((value, key) => {
-        formObject[key] = value;
-      });
-
-      const submitButton = this.querySelector('button[type="submit"]');
-      submitButton.textContent = 'Sending...';
-      submitButton.disabled = true;
-
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formObject),
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.message === 'Email sent successfully') {
-          alert('Message sent successfully!');
-          this.reset();
-        } else {
-          alert('Error: ' + data.message);
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-      })
-      .finally(() => {
-        submitButton.textContent = 'Send Message';
-        submitButton.disabled = false;
-      });
+    const formData = new FormData(this);
+    const formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
     });
-  }
 
-})();
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    // Updated fetch URL - use relative path
+    fetch('./api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formObject),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.message === 'Email sent successfully') {
+        alert('Message sent successfully!');
+        this.reset();
+      } else {
+        alert('Error: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again or contact me directly at suwan.sankaja@gmail.com');
+    })
+    .finally(() => {
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
+    });
+  });
+}
