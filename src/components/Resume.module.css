@@ -1,0 +1,280 @@
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── Education Grid ── */
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.eduGrid > * {
+  height: 100%;
+}
+
+.eduCard {
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.eduCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.6;
+}
+
+.eduCard:hover::before {
+  opacity: 1;
+}
+
+.eduCard:hover {
+  transform: translateY(-4px);
+}
+
+.eduTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.eduPeriod {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(0, 212, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.eduHighlight {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  background: rgba(168, 85, 247, 0.08);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.eduTitle {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.eduInstitution {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.eduDetails {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eduDetails li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.eduDetails li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.5;
+}
+
+/* ── Download ── */
+.downloadRow {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── Projects Heading ── */
+.projectsHeading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.timelineMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-sm);
+  padding-top: var(--space-lg);
+}
+
+.timelinePeriod {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.activeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Timeline Card ── */
+.timelineCard {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.timelineCard:hover {
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.projectTitle {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.projectLinks {
+  display: flex;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.projectLink:hover {
+  color: var(--primary);
+}
+
+.projectDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techTag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition);
+}
+
+.timelineCard:hover .techTag {
+  border-color: var(--border-hover);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .eduGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eduGrid {
+    max-width: none;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .timelineMeta {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .timelineCard {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .cardHeader {
+    flex-direction: column;
+  }
+}

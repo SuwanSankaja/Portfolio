@@ -1,0 +1,189 @@
+/* [project]/src/components/Contact.module.css [app-client] (css) */
+.Contact-module__hcVmEa__header {
+  margin-bottom: var(--space-3xl);
+}
+
+.Contact-module__hcVmEa__grid {
+  gap: var(--space-2xl);
+  grid-template-columns: 1fr 1.5fr;
+  align-items: start;
+  display: grid;
+}
+
+.Contact-module__hcVmEa__info {
+  gap: var(--space-md);
+  flex-direction: column;
+  display: flex;
+}
+
+.Contact-module__hcVmEa__infoCard {
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  display: flex;
+}
+
+.Contact-module__hcVmEa__infoCard:hover {
+  transform: translateY(-2px);
+}
+
+.Contact-module__hcVmEa__infoIcon {
+  color: var(--primary);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.Contact-module__hcVmEa__infoCard:hover .Contact-module__hcVmEa__infoIcon {
+  transform: scale(1.15);
+}
+
+.Contact-module__hcVmEa__infoTitle {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 2px;
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.Contact-module__hcVmEa__infoValue {
+  color: var(--text);
+  transition: color var(--transition);
+  font-size: .95rem;
+  text-decoration: none;
+}
+
+a.Contact-module__hcVmEa__infoValue:hover {
+  color: var(--primary);
+}
+
+.Contact-module__hcVmEa__socials {
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  display: flex;
+}
+
+.Contact-module__hcVmEa__socialLink {
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  width: 46px;
+  height: 46px;
+  color: var(--text-muted);
+  transition: all var(--transition-spring);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.Contact-module__hcVmEa__socialLink:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: #00d4ff0f;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px #00d4ff1a;
+}
+
+.Contact-module__hcVmEa__form {
+  padding: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.Contact-module__hcVmEa__form:before {
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(circle, #00d4ff0f 0%, #0000 70%);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50%;
+  right: -30%;
+}
+
+.Contact-module__hcVmEa__formRow {
+  gap: var(--space-md);
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+.Contact-module__hcVmEa__formGroup {
+  margin-bottom: var(--space-md);
+}
+
+.Contact-module__hcVmEa__label {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  font-size: .82rem;
+  font-weight: 500;
+  display: block;
+}
+
+.Contact-module__hcVmEa__input, .Contact-module__hcVmEa__textarea {
+  width: 100%;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  background: #ffffff05;
+  outline: none;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: .95rem;
+}
+
+.Contact-module__hcVmEa__input::placeholder, .Contact-module__hcVmEa__textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.Contact-module__hcVmEa__input:focus, .Contact-module__hcVmEa__textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff08;
+  box-shadow: 0 0 0 3px #00d4ff14;
+}
+
+.Contact-module__hcVmEa__textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.Contact-module__hcVmEa__submitBtn {
+  width: 100%;
+  margin-top: var(--space-sm);
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.Contact-module__hcVmEa__submitBtn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.Contact-module__hcVmEa__success {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+}
+
+.Contact-module__hcVmEa__success h3 {
+  color: var(--text);
+  margin: var(--space-lg) 0 var(--space-sm);
+  font-size: 1.5rem;
+}
+
+.Contact-module__hcVmEa__success p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .Contact-module__hcVmEa__grid, .Contact-module__hcVmEa__formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .Contact-module__hcVmEa__form {
+    padding: var(--space-xl);
+  }
+}
+
+/*# sourceMappingURL=src_components_Contact_module_css_0w3-wzy._.single.css.map*/

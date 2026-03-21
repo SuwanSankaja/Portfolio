@@ -1,0 +1,125 @@
+/* [project]/src/components/Certifications.module.css [app-client] (css) */
+.Certifications-module__ZVboHa__header {
+  margin-bottom: var(--space-xl);
+}
+
+.Certifications-module__ZVboHa__filters {
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.Certifications-module__ZVboHa__filterBtn {
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-spring);
+  background: #ffffff05;
+  padding: 8px 20px;
+  font-size: .82rem;
+  font-weight: 500;
+}
+
+.Certifications-module__ZVboHa__filterBtn:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+  background: #ffffff0a;
+}
+
+.Certifications-module__ZVboHa__filterActive {
+  color: #fff;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-glow);
+  border-color: #0000;
+}
+
+.Certifications-module__ZVboHa__filterActive:hover {
+  color: #fff;
+}
+
+.Certifications-module__ZVboHa__grid {
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  display: grid;
+}
+
+.Certifications-module__ZVboHa__card {
+  flex-direction: column;
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.Certifications-module__ZVboHa__card:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-6px);
+}
+
+.Certifications-module__ZVboHa__imageWrapper {
+  aspect-ratio: 1;
+  padding: var(--space-lg);
+  background: #ffffff04;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.Certifications-module__ZVboHa__imageWrapper:after {
+  content: "";
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+  background: radial-gradient(circle, #00d4ff14 0%, #0000 70%);
+  position: absolute;
+  inset: 20%;
+}
+
+.Certifications-module__ZVboHa__card:hover .Certifications-module__ZVboHa__imageWrapper:after {
+  opacity: 1;
+}
+
+.Certifications-module__ZVboHa__imageWrapper img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform var(--transition-spring);
+}
+
+.Certifications-module__ZVboHa__card:hover .Certifications-module__ZVboHa__imageWrapper img {
+  transform: scale(1.08);
+}
+
+.Certifications-module__ZVboHa__cardContent {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.Certifications-module__ZVboHa__certTitle {
+  color: var(--text);
+  margin-bottom: 4px;
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.Certifications-module__ZVboHa__certOrg {
+  color: var(--text-muted);
+  font-size: .78rem;
+}
+
+@media (max-width: 600px) {
+  .Certifications-module__ZVboHa__grid {
+    gap: var(--space-md);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Certifications-module__ZVboHa__imageWrapper {
+    padding: var(--space-md);
+  }
+}
+
+/*# sourceMappingURL=src_components_Certifications_module_css_0w3-wzy._.single.css.map*/

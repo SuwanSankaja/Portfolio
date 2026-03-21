@@ -1,0 +1,196 @@
+/* [project]/src/components/Navbar.module.css [app-client] (css) */
+.Navbar-module__cJzEcG__navbar {
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: all var(--transition);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.Navbar-module__cJzEcG__scrolled {
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid var(--border);
+  background: #060611cc;
+}
+
+.Navbar-module__cJzEcG__inner {
+  max-width: var(--container);
+  padding: 0 var(--space-lg);
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__logo {
+  color: var(--text);
+  z-index: 1001;
+  transition: opacity var(--transition);
+  align-items: center;
+  gap: 10px;
+  font-family: Space Grotesk, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__logo:hover {
+  opacity: .8;
+}
+
+.Navbar-module__cJzEcG__logo img {
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--border);
+  width: 36px;
+  height: 36px;
+}
+
+.Navbar-module__cJzEcG__desktopLinks {
+  align-items: center;
+  gap: var(--space-lg);
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__navLink {
+  color: var(--text-muted);
+  transition: color var(--transition);
+  padding: 6px 0;
+  font-size: .88rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.Navbar-module__cJzEcG__navLink:after {
+  content: "";
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  width: 0;
+  height: 2px;
+  transition: all var(--transition);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Navbar-module__cJzEcG__navLink:hover {
+  color: var(--text);
+}
+
+.Navbar-module__cJzEcG__navLink:hover:after {
+  width: 100%;
+}
+
+.Navbar-module__cJzEcG__navLinkActive {
+  color: var(--primary);
+}
+
+.Navbar-module__cJzEcG__navLinkActive:after {
+  width: 100%;
+}
+
+.Navbar-module__cJzEcG__cta {
+  padding: 10px 22px;
+  font-size: .82rem;
+}
+
+.Navbar-module__cJzEcG__hamburger {
+  z-index: 1001;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  display: none;
+}
+
+.Navbar-module__cJzEcG__bar {
+  background: var(--text);
+  width: 24px;
+  height: 2px;
+  transition: all var(--transition);
+  border-radius: 2px;
+  display: block;
+}
+
+.Navbar-module__cJzEcG__barOpen:first-child {
+  transform: rotate(45deg)translate(5px, 5px);
+}
+
+.Navbar-module__cJzEcG__barOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.Navbar-module__cJzEcG__barOpen:nth-child(3) {
+  transform: rotate(-45deg)translate(5px, -5px);
+}
+
+.Navbar-module__cJzEcG__overlay {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  background: #000000b3;
+  position: fixed;
+  inset: 0;
+}
+
+.Navbar-module__cJzEcG__mobileMenu {
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+  width: 280px;
+  height: 100vh;
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-lg) var(--space-lg);
+  gap: var(--space-xs);
+  z-index: 1000;
+  transition: right var(--transition-spring);
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  overflow-y: auto;
+}
+
+.Navbar-module__cJzEcG__mobileMenuOpen {
+  right: 0;
+}
+
+.Navbar-module__cJzEcG__mobileLink {
+  padding: var(--space-md) var(--space-md);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  border-left: 2px solid #0000;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+.Navbar-module__cJzEcG__mobileLink:hover, .Navbar-module__cJzEcG__mobileLinkActive {
+  color: var(--primary);
+  border-left-color: var(--primary);
+  background: #00d4ff0d;
+}
+
+.Navbar-module__cJzEcG__mobileCta {
+  margin-top: var(--space-lg);
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .Navbar-module__cJzEcG__desktopLinks {
+    display: none;
+  }
+
+  .Navbar-module__cJzEcG__hamburger {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=src_components_Navbar_module_css_0w3-wzy._.single.css.map*/

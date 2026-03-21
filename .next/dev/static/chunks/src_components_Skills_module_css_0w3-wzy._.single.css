@@ -1,0 +1,113 @@
+/* [project]/src/components/Skills.module.css [app-client] (css) */
+.Skills-module__G7oUEG__header {
+  margin-bottom: var(--space-3xl);
+}
+
+.Skills-module__G7oUEG__grid {
+  gap: var(--space-lg);
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+.Skills-module__G7oUEG__grid > * {
+  height: 100%;
+}
+
+.Skills-module__G7oUEG__card {
+  padding: var(--space-xl);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Skills-module__G7oUEG__card:before {
+  content: "";
+  background: var(--card-color);
+  opacity: 0;
+  height: 2px;
+  transition: opacity var(--transition), height var(--transition);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.Skills-module__G7oUEG__card:hover:before {
+  opacity: 1;
+  height: 3px;
+}
+
+.Skills-module__G7oUEG__card:hover {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--card-color) 10%, transparent);
+  transform: translateY(-6px);
+}
+
+.Skills-module__G7oUEG__card:after {
+  content: "";
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+  background: radial-gradient(350px circle at 50% 0%,
+    color-mix(in srgb, var(--card-color) 6%, transparent),
+    transparent 70%);
+  position: absolute;
+  inset: 0;
+}
+
+.Skills-module__G7oUEG__card:hover:after {
+  opacity: 1;
+}
+
+.Skills-module__G7oUEG__cardIcon {
+  color: var(--card-color);
+  margin-bottom: var(--space-md);
+  transition: transform var(--transition);
+}
+
+.Skills-module__G7oUEG__card:hover .Skills-module__G7oUEG__cardIcon {
+  transform: scale(1.15);
+}
+
+.Skills-module__G7oUEG__cardTitle {
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+  font-size: 1.1rem;
+}
+
+.Skills-module__G7oUEG__pills {
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.Skills-module__G7oUEG__pill {
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition);
+  background: #ffffff08;
+  padding: 6px 14px;
+  font-size: .78rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.Skills-module__G7oUEG__card:hover .Skills-module__G7oUEG__pill {
+  border-color: color-mix(in srgb, var(--card-color) 25%, transparent);
+  background: color-mix(in srgb, var(--card-color) 5%, transparent);
+}
+
+@media (max-width: 1024px) {
+  .Skills-module__G7oUEG__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .Skills-module__G7oUEG__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_components_Skills_module_css_0w3-wzy._.single.css.map*/

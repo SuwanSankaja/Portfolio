@@ -1,0 +1,113 @@
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid > * {
+  height: 100%;
+}
+
+.card {
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-color);
+  opacity: 0;
+  transition: opacity var(--transition), height var(--transition);
+}
+
+.card:hover::before {
+  opacity: 1;
+  height: 3px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--card-color) 10%, transparent);
+}
+
+/* Glow effect on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+  background: radial-gradient(
+    350px circle at 50% 0%,
+    color-mix(in srgb, var(--card-color) 6%, transparent),
+    transparent 70%
+  );
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.cardIcon {
+  color: var(--card-color);
+  margin-bottom: var(--space-md);
+  transition: transform var(--transition);
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.15);
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition);
+}
+
+.card:hover .pill {
+  border-color: color-mix(in srgb, var(--card-color) 25%, transparent);
+  background: color-mix(in srgb, var(--card-color) 5%, transparent);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
