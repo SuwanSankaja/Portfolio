@@ -186,6 +186,12 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    background: rgba(6, 6, 17, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
   .desktopLinks {
     display: none;
   }
