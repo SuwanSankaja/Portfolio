@@ -1,11 +1,5 @@
 import './globals.css';
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  viewportFit: 'cover',
-};
-
 export const metadata = {
   title: 'Suwan Sankaja — Data Engineer & AI/ML Enthusiast',
   description:
