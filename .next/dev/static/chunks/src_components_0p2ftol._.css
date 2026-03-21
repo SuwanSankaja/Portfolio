@@ -195,9 +195,10 @@
 
 /* [project]/src/components/Hero.module.css [app-client] (css) */
 .Hero-module__ZARIfG__hero {
+  min-height: 100vh;
+  padding-top: var(--nav-height);
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden;
