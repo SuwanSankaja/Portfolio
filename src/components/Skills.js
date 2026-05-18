@@ -15,7 +15,7 @@ const skills = [
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
     ),
     title: 'Data Engineering',
-    items: ['Databricks', 'Apache Spark', 'Apache Kafka', 'Apache Airflow', 'Pandas & NumPy', 'Jupyter Notebooks'],
+    items: ['Databricks', 'Apache Spark', 'Snowflake', 'Apache Kafka', 'Apache Airflow', 'Pandas & NumPy', 'Jupyter Notebooks'],
     color: 'var(--green)',
   },
   {
