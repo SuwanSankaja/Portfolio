@@ -41,7 +41,7 @@ const projects = [
     description:
       'A sleek, native media streaming application that streams personal media libraries from Koofr, pCloud, and WebDAV cloud storage directly on Device.',
     image:
-      'https://filedn.eu/lKBQ3k74oxYj0kgKuxh2wfS/Portfolio%20Website/projects/confinix_stream_demo.gif',
+      'https://filedn.eu/lKBQ3k74oxYj0kgKuxh2wfS/Portfolio%20Website/projects/confinix_stream.gif',
     tech: ['Swift', 'SwiftUI', 'UIKit', 'VLCKit', 'WebDAV', 'TMDB API'],
     isMobile: true,
     links: [],
