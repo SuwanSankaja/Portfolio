@@ -1,71 +1,176 @@
 .footer {
-  background: var(--bg-surface);
+  position: relative;
+  padding: var(--space-4xl) 0 max(28px, env(safe-area-inset-bottom));
   border-top: 1px solid var(--border);
-  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, var(--bg-surface), var(--bg));
+  overflow: hidden;
 }
 
 .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: var(--space-xl);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: var(--space-2xl);
 }
 
 .brand {
-  display: flex;
+  max-width: 380px;
+}
+
+.tagline {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+.status {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-}
-
-.logo {
-  border-radius: var(--radius-full);
-  object-fit: cover;
-}
-
-.brandName {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-.links {
-  display: flex;
-  gap: var(--space-xl);
-}
-
-.links a {
-  font-size: 0.9rem;
+  gap: 10px;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  text-decoration: none;
-  transition: color var(--transition);
 }
 
-.links a:hover {
-  color: var(--primary);
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.colTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.link:hover {
+  color: var(--text);
+  transform: translateX(3px);
+}
+
+.time {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.zone {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.mail {
+  overflow-wrap: anywhere;
+}
+
+.wordmark {
+  margin: var(--space-3xl) 0 var(--space-md);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.6rem, 12vw, 9.5rem);
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 0.08em;
+  letter-spacing: -0.06em;
+  text-align: center;
+  white-space: nowrap;
+  color: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.01));
+  -webkit-background-clip: text;
+  background-clip: text;
+  user-select: none;
+  transition: background 0.6s var(--ease);
 }
 
 .bottom {
-  text-align: center;
-}
-
-.bottom p {
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
+.crafted {
+  margin-left: auto;
+}
+
+.toTop {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--text);
+  border: 1px solid var(--border-hover);
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.4s var(--ease-out), background var(--transition), border-color var(--transition);
+}
+
+.toTop:hover {
+  background: var(--gradient-primary);
+  border-color: transparent;
+}
+
+@media (max-width: 1024px) {
   .top {
-    flex-direction: column;
-    gap: var(--space-lg);
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .links {
+  .brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: var(--space-3xl);
+  }
+
+  .top {
+    gap: var(--space-xl) var(--space-lg);
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .col:last-child {
+    grid-column: span 2;
+  }
+
+  .wordmark {
+    margin: var(--space-3xl) 0 var(--space-lg);
+  }
+
+  .bottom {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-md);
+  }
+
+  .crafted {
+    display: none;
+  }
+
+  .toTop {
+    margin-left: auto;
   }
 }

@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './Certifications.module.css';
 import { ScrollReveal } from './ScrollReveal';
+import { SectionHeader } from './SectionHeader';
+import { IconArrowUpRight } from './Icons';
+import styles from './Certifications.module.css';
 
-const filters = ['All', 'Cisco', 'AWS', 'Oracle', 'GitHub', 'Coursera', 'Other'];
+const filters = ['All', 'AWS', 'Oracle', 'Cisco', 'Coursera', 'GitHub', 'Other'];
 
-const certs = [
+export const certs = [
   {
     title: 'Intro to Cybersecurity',
     org: 'Cisco',
@@ -109,47 +111,57 @@ const certs = [
 
 export function Certifications() {
   const [active, setActive] = useState('All');
-
   const filtered = active === 'All' ? certs : certs.filter((c) => c.category === active);
+  const countFor = (f) => (f === 'All' ? certs.length : certs.filter((c) => c.category === f).length);
 
   return (
     <section id="certifications" className="section">
       <div className="container">
+        <SectionHeader
+          index="05"
+          label="Certifications"
+          title="Always learning,"
+          highlight="always shipping."
+          subtitle="Industry credentials across cloud, data, AI and networking from AWS, Oracle, Cisco and more."
+        />
+
         <ScrollReveal>
-          <div className={styles.header}>
-            <span className="section-label">Certifications & Badges</span>
-            <h2 className="section-title">Continuous learning</h2>
-            <p className="section-subtitle">is key to staying ahead in technology</p>
+          <div className={styles.filters} role="tablist" aria-label="Filter certifications">
+            {filters.map((f) => (
+              <button
+                key={f}
+                role="tab"
+                aria-selected={active === f}
+                className={`${styles.filterBtn} ${active === f ? styles.filterActive : ''}`}
+                onClick={() => setActive(f)}
+              >
+                {f}
+                <span className={styles.filterCount}>{countFor(f)}</span>
+              </button>
+            ))}
           </div>
         </ScrollReveal>
 
-        <div className={styles.filters}>
-          {filters.map((f) => (
-            <button
-              key={f}
-              className={`${styles.filterBtn} ${active === f ? styles.filterActive : ''}`}
-              onClick={() => setActive(f)}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <div className={styles.grid}>
-          {filtered.map((cert) => (
+        <div className={styles.grid} key={active}>
+          {filtered.map((cert, i) => (
             <a
               key={cert.title}
               href={cert.href}
               target="_blank"
               rel="noopener noreferrer"
               className={`glass-card ${styles.card}`}
+              style={{ '--i': i }}
             >
               <div className={styles.imageWrapper}>
-                <img src={cert.image} alt={cert.title} loading="lazy" />
+                <img src={cert.image} alt={`${cert.org} — ${cert.title} badge`} loading="lazy" />
               </div>
               <div className={styles.cardContent}>
-                <h4 className={styles.certTitle}>{cert.title}</h4>
                 <span className={styles.certOrg}>{cert.org}</span>
+                <h3 className={styles.certTitle}>{cert.title}</h3>
+                <span className={styles.verify}>
+                  View credential
+                  <IconArrowUpRight size={13} />
+                </span>
               </div>
             </a>
           ))}
